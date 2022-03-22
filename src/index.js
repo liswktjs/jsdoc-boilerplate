@@ -1,51 +1,41 @@
 /**
- * Represents a book.
- * @constructor
- * @param {string} title - The title of the book.
- * @param {string} author - The author of the book.
- */
-function Book(title, author) {}
-
-/**
- * Both of these will link to the bar function.
- * @see {@link bar}
- * @see bar
- */
-function foo() {}
-
-// Use the inline {@link} tag to include a link within a free-form description.
-/**
- * @see {@link foo} for further information.
- * @see {@link http://github.com|GitHub}
- */
-function bar() {}
-
-/**
- * Generic dairy product.
+ * vendingMachine manager
  * @constructor
  */
-function DairyProduct() {}
+
+function VendingMachine() {}
 
 /**
- * Check whether the dairy product is solid at room temperature.
- * @abstract
- * @return {boolean}
+ * 유저에게 값을 입력받아 커피를 구매한다
+ * @param {number} cost - 입력된 가격
  */
-DairyProduct.prototype.isSolid = function () {
-	throw new Error('must be implemented by subclass!');
-};
+
+VendingMachine.prototype.getItem(cost) = function() {
+}
 
 /**
- * Cool, refreshing milk.
- * @constructor
- * @augments DairyProduct
+ * 1000원 이상인지 이하인지 판단한다
+ * @param {number} cost - 입력된 가격
+ * @return {boolean} 1000원이상이면, true 1000원 미만이면 false
  */
-function Milk() {}
+
+VendingMachine.prototype.checkCostAmount(cost) = function() {
+	return isOverThousand;
+}
 
 /**
- * Check whether milk is solid at room temperature.
- * @return {boolean} Always returns false.
+ * 입력된 음료의 저장된 개수를 반환한다
+ * @param {string} kindOfCoffee - 어떤 커피인지 넘기기
+ * @return {number} 저장된 음료의 개수 반환
  */
-Milk.prototype.isSolid = function () {
-	return false;
-};
+VendingMachine.prototype.getSavedCoffeeCount(kindOfCoffee) = function () {
+	return count;
+}
+
+/**
+ * 구입한 개수만큼 자판기 저장소를 업데이트 한다
+ * @param {string} kindOfCoffee - 어떤 커피인지 넘기기
+ * @param {number} purchasedCount - 구입한 커피 개수 
+*/
+ VendingMachine.prototype.updateSavedCoffeeCount(kindOfCoffee, purchasedCount) = function () {
+}
